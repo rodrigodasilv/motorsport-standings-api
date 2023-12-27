@@ -7,7 +7,7 @@ from waitress import serve
 
 app = Flask(__name__)
 
-
+current_year = datetime.date.today().year
 def get_data(url, competitors_nr):
     html_doc = requests.get(url)
     soup = BeautifulSoup(html_doc.content, 'html.parser')
@@ -35,7 +35,7 @@ def get_data(url, competitors_nr):
 @app.route('/wrc')
 def get_standings_wrc(competitors=10):
     return get_data(
-        f'https://www.fia.com/events/world-rally-championship/season-{datetime.date.today().year}/standings',
+        f'https://www.fia.com/events/world-rally-championship/season-{current_year}/standings',
         int(competitors))
 
 
@@ -43,7 +43,7 @@ def get_standings_wrc(competitors=10):
 @app.route('/f1')
 def get_standings_f1(competitors=20):
     return get_data(
-        f'https://www.fia.com/events/fia-formula-one-world-championship/season-{datetime.date.today().year}/{datetime.date.today().year}-classifications',
+        f'https://www.fia.com/events/fia-formula-one-world-championship/season-{current_year}/{current_year}-classifications',
         int(competitors))
 
 
@@ -51,7 +51,7 @@ def get_standings_f1(competitors=20):
 @app.route('/wec')
 def get_standings_wec(competitors=10):
     return get_data(
-        f'https://www.fia.com/events/world-endurance-championship/season-{datetime.date.today().year}/standings',
+        f'https://www.fia.com/events/world-endurance-championship/season-{current_year}/standings',
         int(competitors))
 
 
