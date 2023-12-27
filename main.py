@@ -31,18 +31,29 @@ def get_data(url, competitors_nr):
     return json_data
 
 
+@app.route('/wrc/<competitors>')
 @app.route('/wrc')
-def get_standings_wrc():
-    return get_data(f'https://www.fia.com/events/world-rally-championship/season-{datetime.date.today().year}/standings', 10)
+def get_standings_wrc(competitors=10):
+    return get_data(
+        f'https://www.fia.com/events/world-rally-championship/season-{datetime.date.today().year}/standings',
+        int(competitors))
 
 
+@app.route('/f1/<competitors>')
 @app.route('/f1')
-def get_standings_f1():
-    return get_data(f'https://www.fia.com/events/fia-formula-one-world-championship/season-{datetime.date.today().year}/{datetime.date.today().year}-classifications', 20)
+def get_standings_f1(competitors=20):
+    return get_data(
+        f'https://www.fia.com/events/fia-formula-one-world-championship/season-{datetime.date.today().year}/{datetime.date.today().year}-classifications',
+        int(competitors))
 
+
+@app.route('/wec/<competitors>')
 @app.route('/wec')
-def get_standings_wec():
-    return get_data(f'https://www.fia.com/events/world-endurance-championship/season-{datetime.date.today().year}/standings',19)
+def get_standings_wec(competitors=10):
+    return get_data(
+        f'https://www.fia.com/events/world-endurance-championship/season-{datetime.date.today().year}/standings',
+        int(competitors))
 
-print(f'*** Running on http://127.0.0.1:8080/ ***')
+
+print(f'*** Running on http://localhost:8080/ ***')
 serve(app, host="0.0.0.0", port=8080)
