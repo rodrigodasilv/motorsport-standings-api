@@ -6,13 +6,21 @@
 
 <h3 align=center>Avaliable endpoints</h3>
 <h5>GET /wrc</h5>
-<p>Returns the 10 first competitors in the FIA World Rally Championship</p>
-<h5>GET /wec</h5>
-<p>Returns the 20 first competitors in the FIA World Endurance Championship</p>
-<h5>GET /f1</h5>
-<p>Returns the 10 first competitors in the FIA Formula 1 Championship</p>
+<p>Returns the 10 first competitors in the FIA World Rally Championship for the current year</p>
+<p>Example:</p>
+<p align="center"><img src="https://github.com/rodrigodasilv/motorsport-standings-api/assets/55567123/c300d27b-c0d8-4081-820d-3c83fea26e7b" alt="GET /f1 return" style="width:50%;"/></p>
 
-<mark>Every endpoint has as optional parameter to limit the competitors returned by championship</mark>
+<h5>GET /wec</h5>
+<p>Returns the 20 first competitors in the FIA World Endurance Championship for the current year</p>
+<p>Example:</p>
+<p align="center"><img src="https://github.com/rodrigodasilv/motorsport-standings-api/assets/55567123/ec217bdc-4792-4986-8eb6-91640a0481c2" alt="GET /f1 return" style="width:50%;"/></p>
+
+<h5>GET /f1</h5>
+<p>Returns the 10 first competitors in the FIA Formula 1 Championship for the current year</p>
+<p>Example:</p>
+<p align="center"><img src="https://github.com/rodrigodasilv/motorsport-standings-api/assets/55567123/d503bd37-637d-4821-b3a6-e5d7eebeee7a" alt="GET /f1 return" style="width:50%;"/></p>
+
+<h4 align=center>PS: Every endpoint has as optional parameter to limit the competitors returned by championship</h4>
 
 <h3 align=center>Instalation</h3>
 
